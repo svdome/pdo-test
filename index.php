@@ -30,7 +30,7 @@ while ($row=$res->fetch()) {
 */
 
 // Подготовленный запрос
-///**
+/**
 $id=3;
 $stmt=$db->prepare('select name, id from categories'); //подготовленный запрос
 $stmt->execute();
@@ -40,7 +40,7 @@ echo '<pre>';
 print_r($category);
 
 echo '</pre>';
-//*/
+*/
 
 
 
