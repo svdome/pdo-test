@@ -56,7 +56,7 @@ print_r($data);
 echo '</pre>';
 */
 
-/**
+///**
 $arr=[1,3,6];
 $in = str_repeat('?,', count($arr)-1) . '?';
 $str=$db->prepare("select*from categories where id in ($in)");
@@ -65,7 +65,7 @@ $data=$stm->fetchAll();
 echo '<pre>';
 print_r($data);
 echo '</pre>';
-*/
+//*/
 
 /**
 $name='новая категория';
