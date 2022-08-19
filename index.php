@@ -8,7 +8,7 @@ try {
 } catch (PDOException $e) {
     print_r('Error!: ' .$e->getMessage());
     die();
-};
+}
 
 
 // прямой запрос однострочный
