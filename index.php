@@ -70,7 +70,6 @@ echo '</pre>';
 $name='новая категория'; //добавление записи
 $stm=$db->prepare('insert into categories (name) values (:name)');
 $stm->execute(['name'=>$name]);
-
 echo '<pre>';
 print_r($data);
 echo '</pre>';
