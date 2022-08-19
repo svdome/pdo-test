@@ -45,7 +45,7 @@ echo '</pre>';
 
 /**
 $limit=2; //ограничивает кол-во выводимых записей (первые 2 или ...)
-$stm=$db->prepare('select*from categories limit ?');
+$stm=$db->prepare('select *from categories limit ?');
 $stm->bindValue(1, $limit, PDO::PARAM_INT);
 $stm->execute();
 $data=$stm->fetchAll();
@@ -54,31 +54,37 @@ print_r($data);
 echo '</pre>';
 */
 
-///**
-$arr=[1,3,6];
+
+/**
+$arr =[1, 3, 6]; // выбор записей по id
 $in = str_repeat('?,', count($arr)-1) . '?';
-$str=$db->prepare("select*from categories where id in ($in)");
-$stm->execute($arr);
-$data=$stm->fetchAll();
+$stm =$db ->prepare("select * from categories where id in ($in)");
+$stm ->execute($arr);
+$data =$stm ->fetchAll();
 echo '<pre>';
 print_r($data);
 echo '</pre>';
-//*/
+*/
 
 /**
-$name='новая категория';
+$name='новая категория'; //добавление записи
 $stm=$db->prepare('insert into categories (name) values (:name)');
 $stm->execute(['name'=>$name]);
+
+echo '<pre>';
+print_r($data);
+echo '</pre>';
 */
+
 /**
 $id=3;
-$name= 'Компьютеры';
+$name= 'Компьютеры'; // изменение записи
 $stm=$db->prepare('update categories set name = :name where id =:id');
 $stm->execute(['name'=>$name, 'id'=>$id]);
 */
 
 /**
-$id=1;
+$id=12; // удаление записи
 $stm=$db->prepare('delete from categories where id =:id');
 $stm->execute(['id'=>$id]);
 */
