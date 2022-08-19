@@ -30,7 +30,7 @@ while ($row=$res->fetch()) {
 */
 
 // Подготовленный запрос
-///**
+/**
 $id=3;
 $stmt=$db->prepare('select name, id from categories'); //подготовленный запрос
 $stmt->execute();
@@ -40,13 +40,11 @@ echo '<pre>';
 print_r($category);
 
 echo '</pre>';
-//*/
-
-
+*/
 
 
 /**
-$limit=2;
+$limit=2; //ограничивает кол-во выводимых записей (первые 2 или ...)
 $stm=$db->prepare('select*from categories limit ?');
 $stm->bindValue(1, $limit, PDO::PARAM_INT);
 $stm->execute();
@@ -56,7 +54,7 @@ print_r($data);
 echo '</pre>';
 */
 
-/**
+///**
 $arr=[1,3,6];
 $in = str_repeat('?,', count($arr)-1) . '?';
 $str=$db->prepare("select*from categories where id in ($in)");
@@ -65,7 +63,7 @@ $data=$stm->fetchAll();
 echo '<pre>';
 print_r($data);
 echo '</pre>';
-*/
+//*/
 
 /**
 $name='новая категория';
